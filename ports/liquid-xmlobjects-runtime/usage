@@ -1,0 +1,14 @@
+liquid-xmlobjects-runtime provides CMake targets.
+
+The RTTR library (a dependency) cannot be built as a static library with the dynamic CRT, so the triplets are:
+    Windows   x64-windows (shared library), x64-windows-static (static library, static CRT)
+    Linux     x64-linux-dynamic  (not x64-linux)
+    macOS     arm64-osx-dynamic, x64-osx-dynamic  (not arm64-osx, x64-osx)
+
+    find_package(LiquidXmlObjectsRuntime CONFIG REQUIRED)
+    # static triplets
+    target_link_libraries(main PRIVATE Liquid::XmlObjectsRuntime)
+    # dynamic triplets
+    target_link_libraries(main PRIVATE Liquid::XmlObjectsRuntimeShared)
+
+#include <LiquidTechnologies/XmlObjects/LxSerializer.h>

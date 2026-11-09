@@ -1,0 +1,3 @@
+# the files of a port are hashed by vcpkg exactly as they are in git, they must not be changed by a checkout
+ports/** -text
+versions/** text eol=lf

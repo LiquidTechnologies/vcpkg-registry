@@ -1,7 +1,7 @@
 {
   "default": {
     "liquid-xmlobjects-runtime": {
-      "baseline": "21.6.11",
+      "baseline": "21.6.12",
       "port-version": 0
     }
   }

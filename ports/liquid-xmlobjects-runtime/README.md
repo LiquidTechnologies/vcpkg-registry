@@ -1,6 +1,7 @@
 The vcpkg port of the runtime. Releases are published to the vcpkg registry https://github.com/LiquidTechnologies/vcpkg-registry (see its README to use
-it) by .github/workflows/package.yml with scripts/VcpkgRegistry.py, and the copy in the registry is this one. The source of the runtime is not public, so the
-port can not download it : it is installed from the binary packages that the workflow builds (with LX_SOURCE_DIR, below) and publishes to the binary cache.
+it) by .github/workflows/package.yml with scripts/VcpkgRegistry.py, and the copy in the registry is this one plus a prebuilt.cmake. The source of the runtime is
+not public, so the port can not download it : it installs the prebuilt package of the triplet, which the workflow builds (with LX_SOURCE_DIR, below) and
+attaches to a release of the registry. prebuilt.cmake says where each zip is and what its SHA512 is : VcpkgRegistry.py writes it, so it is not in this folder.
 
 To build this copy of the port from a checkout of the source, set LX_SOURCE_DIR to it :
 
